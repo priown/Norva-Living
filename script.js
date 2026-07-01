@@ -23,3 +23,13 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.fade-in').forEach((el) => {
     observer.observe(el);
 });
+
+document.querySelector(".hero-btn").addEventListener("click", function() {
+    document.querySelector("#feature1").scrollIntoView({ behavior: "smooth" });
+});
+document.querySelector(".hero-btn1").addEventListener("click", function() {
+    document.querySelector("#feature1").scrollIntoView({ behavior: "smooth" });
+});
+document.querySelector(".hero-btn2").addEventListener("click", function() {
+    document.querySelector("#feature1").scrollIntoView({ behavior: "smooth" });
+});
