@@ -5,22 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Norva-living</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
-<body>
+<body id="body">
     <div class="utility-bar">
-        <p>Free shipping on orders over $150</p>
-        <p>Need help? Call us at (123) 456-7890</p>
+        <div class="utility-track">
+            <span>Free shipping on orders over $150</span>
+            <span>Need help? Call us at (123) 456-7890</span>
+            <span>New arrivals every friday - Shop Now</span>
+            <span>Free shipping on orders over $150</span>
+            <span>Need help? Call us at (123) 456-7890</span>
+            <span>New arrivals every friday - Shop Now</span>
+        </div>
     </div>
     <nav class="navbar">
         <div class="logo">Norva-living</div>
 
+        <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <ul class="nav-links">
-            <li><a href="#">New Arrivals</a></li>
-            <li><a href="#">Living Room</a></li>
-            <li><a href="#">Bedroom</a></li>
-            <li><a href="#">Lighting</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="#body">Home</a></li>
+            <li><a href="#feature1">Living Room</a></li>
+            <li><a href="#feature2">New arrivals</a></li>
+            <li><a href="#feature3">Lighting</a></li>
+            <li><a href="#footer">About</a></li>
         </ul>
 
         <div class="nav-icons">
@@ -40,7 +51,7 @@
             <button>Shop the Collection</button>
         </div>
     </section>
-    <section class="feature-block">
+    <section class="feature-block fade-in" id="feature1">
         <div class="feature-text">
             <h2>Get the Look You Love</h2>
             <p>Every piece in our collection is chosen for comfort, craftsmanship, and quite confidence. Built to last, designed to belong.</p>
@@ -50,7 +61,7 @@
         <img src="chair.jpg" alt="modern accent chair" class="feature-img">
     </section>
 
-    <section class="feature-block reverse">
+    <section class="feature-block reverse fade-in" id="feature2">
         <img src="ceramicvase.jpg" alt="Styled vases and decor" class="feature-img">
         <div class="feature-text">
             <span class="label">New Arrival</span>
@@ -59,14 +70,34 @@
             <button>Shop Vases</button>
         </div>
     </section>
-    <section class="hero">
+    <div class="marquee-strip">
+  <div class="marquee-track">
+    <span>Timeless Design</span>
+    <span>•</span>
+    <span>Crafted with Care</span>
+    <span>•</span>
+    <span>Spaces That Speak</span>
+    <span>•</span>
+    <span>Nordic Warmth</span>
+    <span>•</span>
+    <span>Timeless Design</span>
+    <span>•</span>
+    <span>Crafted with Care</span>
+    <span>•</span>
+    <span>Spaces That Speak</span>
+    <span>•</span>
+    <span>Nordic Warmth</span>
+    <span>•</span>
+  </div>
+</div>
+    <section class="hero fade-in" id="feature3">
         <img src="banniere_hero_169__32_.png" alt="Modern living room setup" class="hero-img">
         <div class="hero-text">
             <h1>modern living has never been easier</h1>
             <button>Shop Now</button>
         </div>
     </section>
-    <footer class="site-footer">
+    <footer class="site-footer fade-in" id="footer">
         <div class="footer-main">
 
             <div class="footer-col brand-col">
@@ -91,7 +122,7 @@
             <div class="footer-col cta-col">
                 <h3>Stay UpdatedInspired</h3>
                 <p>Subscribe to recieve interior design inspiration and exclusive collections drops.</p>
-                <a href="#" class="btn-dark">Subscribe Now <span class="arrow">→</span></a>
+                <button class="subscribe-btn">Subscribe Now</button>
             </div>
             <div class="footer-bottom">
                 <div class="bottom-left">

@@ -9,13 +9,33 @@ body {
     margin: 0 auto;
     background-color: #e6f1ff;
 }
+html {
+    scroll-behavior: smooth;
+}
 .utility-bar {
     background-color: #1e293b;
     color: #ffffff;
-    padding: 10px;
-    text-align: center;
+    padding: 8px 0;
+    overflow: hidden;
+}
+.utility-track {
     display: flex;
-    justify-content: space-between;
+    gap: 80px;
+    width: max-content;
+    animation: scroll 20s linear infinite;
+}
+.utility-track span {
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
 }
 
 .navbar {
@@ -25,6 +45,10 @@ body {
     padding: 15px 30px;
     background-color: #e6f1ff;
     border-bottom: 1px solid #e5e5e5;
+    position: relative;
+}
+.hamburger {
+    display: none;
 }
 
 .nav-links {
@@ -163,6 +187,37 @@ body {
     letter-spacing: 1px;
     color: #888;
 }
+.marquee-strip {
+  background-color: #1e293b;
+  color: white;
+  padding: 18px 0 18px 0;
+  overflow: hidden;
+  margin-top: -1px;
+  margin-bottom: 24px;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 60px;
+  width: max-content;
+  animation: marquee 12s linear infinite;
+}
+
+.marquee-track span {
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-weight: 300;
+}
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
 
 .site-footer {
     background-color: #e6f1ff;
@@ -224,7 +279,7 @@ body {
 .cta-col p {
     margin-bottom: 20px;
 }
-.btn-dark {
+.subscribe-btn {
     display: inline-block;
     align-items: center;
     justify-content: space-between;
@@ -239,6 +294,8 @@ body {
     border-radius: 25px;
     cursor: pointer;
     text-decoration: none;
+    cursor: pointer;
+    border: none;
 }
 .btn-dark:hover {
     background-color: #3b82f6;
@@ -295,4 +352,91 @@ body {
         flex-direction: column;
         gap: 5px;
     }
+}
+
+/* ── MOBILE: screens 768px wide and below ── */
+@media (max-width: 768px) {
+
+  /* Utility bar stacks vertically */
+  .utility-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 4px;
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  /* Navbar: hide links, show hamburger */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 100;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-icons {
+    display: none;
+  }
+
+  /* Hamburger button */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #1e293b;
+  }
+
+  /* Hero text smaller */
+  .hero-text {
+    width: 80%;
+  }
+
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  /* Feature blocks stack vertically */
+  .feature-block {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .feature-block.reverse {
+    flex-direction: column;
+  }
+
+  .feature-text,
+  .feature-img {
+    width: 100%;
+  }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
